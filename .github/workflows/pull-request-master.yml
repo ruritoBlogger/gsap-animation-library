@@ -1,38 +1,29 @@
-name: publish to npm repository after PR merged.
+name: publish to npm repository after PR merged into master.
 on:
-  pull_request:
+  # pull_request:
+  push:
     branches: master
-    types: closed
+    # types: closed
 
 # @doc: https://dev.classmethod.jp/articles/github-actions-npm-automatic-release/
 jobs:
   build_and_preview:
     runs-on: ubuntu-latest
-    if: github.event.pull_request.merged == true
     steps:
       - uses: actions/checkout@v2
 
-    - name: Setup node env
-        uses: actions/setup-node@v1
+      - name: Setup node env
+        uses: actions/setup-node@v2
         with:
-          node-version: 10.x
-          registry-url: 'https://registry.npmjs.org'
-        run:
-          ./publish.sh
+          node-version: 12
 
       - name: Install dependencies
-        run: npm install & npm install can-npm-publish
+        run: npm install
 
-      - name: Build contents
+      - name: Build components
         run: npm run build
-      
-      - name: add tags
-        env:
-          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
-          REPO: ${{github.repository}}
-          COMMIT: ${{github.sha}}
 
-      - name: publish to npm repository
-        run: npm publish
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      - name: Publish to npm repo
+        uses: JS-DevTools/npm-publish@v1
+        with:
+          token: ${{ secrets.NPM_TOKEN }}

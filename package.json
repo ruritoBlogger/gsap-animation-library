@@ -1,6 +1,6 @@
 {
   "name": "gsap-animation-library",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Animation Library for React.js, Next.js using gsap",
   "main": "index.js",
   "types": "index.d.ts",
@@ -14,7 +14,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ruritoBlogger/gsap-animation-library.git"
+    "url": "https://github.com/ruritoBlogger/gsap-animation-library.git"
+  },
+  "publishConfig": {
+    "registry":"https://registry.npmjs.org"
   },
   "keywords": [
     "gsap",
