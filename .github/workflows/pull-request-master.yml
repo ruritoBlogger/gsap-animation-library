@@ -8,29 +8,27 @@ on:
 jobs:
   build_and_preview:
     runs-on: ubuntu-latest
-    if: github.event.pull_request.merged == true
     steps:
       - uses: actions/checkout@v2
 
-    - name: Setup node env
+      - name: Setup node env
         uses: actions/setup-node@v1
         with:
           node-version: 10.x
-          registry-url: 'https://registry.npmjs.org'
-        run:
-          ./publish.sh
+          registry-url: "https://registry.npmjs.org"
 
       - name: Install dependencies
         run: npm install & npm install can-npm-publish
 
       - name: Build contents
         run: npm run build
-      
+
       - name: add tags
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
           REPO: ${{github.repository}}
           COMMIT: ${{github.sha}}
+        run: ./publish.sh
 
       - name: publish to npm repository
         run: npm publish
