@@ -1,6 +1,6 @@
 {
   "name": "gsap-animation-library",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Animation Library for React.js, Next.js using gsap",
   "main": "index.js",
   "types": "index.d.ts",
