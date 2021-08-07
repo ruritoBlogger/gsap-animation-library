@@ -2,12 +2,12 @@ name: publish to npm repository after PR merged.
 on:
   pull_request:
     branches: master
+    types: closed
 
 # @doc: https://dev.classmethod.jp/articles/github-actions-npm-automatic-release/
 jobs:
   build_and_preview:
     runs-on: ubuntu-latest
-    if: github.event.pull_request.merged == true
     steps:
       - uses: actions/checkout@v2
 
