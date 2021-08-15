@@ -11,8 +11,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc",
     "prepublishOnly": "npm run build",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "storybook": "start-storybook -s ./src/assets -p 6006",
+    "build-storybook": "build-storybook -s src/assets"
   },
   "repository": {
     "type": "git",
