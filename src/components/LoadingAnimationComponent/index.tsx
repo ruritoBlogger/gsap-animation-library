@@ -1,9 +1,9 @@
 import { useEffect, useRef } from "react";
 
-import { CreateLoadingAnimation } from "./animation";
+import { CreateLoadingAnimation } from "../../animations/CreateLoadingAnimation";
 import styles from "./index.module.sass";
 
-const LoadingAnimation: React.FC = () => {
+export const LoadingAnimationComponent: React.FC = () => {
   // FIXME: stop using any type
   const windowRef: any = useRef(null);
   const imageRef: any = useRef(null);
@@ -62,5 +62,3 @@ const LoadingAnimation: React.FC = () => {
     </div>
   );
 };
-
-export default LoadingAnimation;
