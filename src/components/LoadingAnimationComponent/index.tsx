@@ -16,18 +16,20 @@ export const LoadingAnimationComponent: React.FC = () => {
   };
 
   useEffect(() => {
-    CreateLoadingAnimation(windowRef, imageRef, anotherRef, {
-      startTime: 0,
-      duration: animationTime,
-      xCenterPosition:
-        windowRef.current.offsetWidth / 2 -
-        imageRef.current.offsetLeft -
-        imageRef.current.width / 2,
-      yCenterPosition:
-        windowRef.current.offsetHeight / 2 -
-        imageRef.current.offsetTop -
-        imageRef.current.height / 2,
-    });
+    if (windowRef.current && imageRef.current && anotherRef.current) {
+      CreateLoadingAnimation(windowRef, imageRef, anotherRef, {
+        startTime: 0,
+        duration: animationTime,
+        xCenterPosition:
+          windowRef.current.offsetWidth / 2 -
+          imageRef.current.offsetLeft -
+          imageRef.current.width / 2,
+        yCenterPosition:
+          windowRef.current.offsetHeight / 2 -
+          imageRef.current.offsetTop -
+          imageRef.current.height / 2,
+      });
+    }
 
     document.addEventListener("touchmove", noScroll, { passive: false });
     document.addEventListener("mousewheel", noScroll, { passive: false });
@@ -35,7 +37,7 @@ export const LoadingAnimationComponent: React.FC = () => {
       document.removeEventListener("touchmove", noScroll);
       document.removeEventListener("mousewheel", noScroll);
     }, animationTime * 1000);
-  }, []);
+  }, [windowRef.current, imageRef.current, anotherRef.current]);
 
   return (
     <div className={styles.loading_inner}>
