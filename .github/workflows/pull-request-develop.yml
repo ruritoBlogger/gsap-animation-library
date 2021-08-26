@@ -1,4 +1,4 @@
-name: Checking types and transpiling before PR merged.
+name: Build
 on:
   pull_request:
     branches: develop
