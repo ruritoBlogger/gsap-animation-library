@@ -4,7 +4,7 @@
 
 Animation Library for React.js, Next.js using gsap
 
-![result](https://github.com/ruritoBlogger/gsap-animation-library/tree/master/src/assets/sampleAnimation.gif)
+![result](https://user-images.githubusercontent.com/40134104/131024867-ca159043-12fd-4a49-a2f4-c46a77c8f8da.gif)
 
 ## Installation
 
