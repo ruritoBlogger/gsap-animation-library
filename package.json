@@ -11,8 +11,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --mode=production",
     "prepublishOnly": "npm run build",
-    "storybook": "start-storybook --docs -s ./src/assets -p 6006",
-    "build-storybook": "build-storybook --docs -s src/assets"
+    "storybook": "start-storybook -s ./src/assets -p 6006",
+    "build-storybook": "build-storybook -s src/assets"
   },
   "repository": {
     "type": "git",
@@ -34,6 +34,7 @@
   "devDependencies": {
     "@babel/core": "^7.15.0",
     "@storybook/addon-actions": "^6.3.7",
+    "@storybook/addon-controls": "^6.3.7",
     "@storybook/addon-docs": "^6.3.7",
     "@storybook/addon-essentials": "^6.3.7",
     "@storybook/addon-links": "^6.3.7",
