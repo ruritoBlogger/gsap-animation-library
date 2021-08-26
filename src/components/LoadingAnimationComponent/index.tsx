@@ -47,7 +47,7 @@ export const LoadingAnimationComponent: React.FC = () => {
             <img
               className={styles.animation_icon}
               ref={imageRef}
-              src="/triangle.png"
+              src="triangle.png"
               alt="アンジュのアイコン"
             ></img>
           </div>
