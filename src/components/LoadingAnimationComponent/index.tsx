@@ -31,12 +31,20 @@ export const LoadingAnimationComponent: React.FC = () => {
       });
     }
 
-    document.addEventListener("touchmove", noScroll, { passive: false });
-    document.addEventListener("mousewheel", noScroll, { passive: false });
-    setTimeout(() => {
-      document.removeEventListener("touchmove", noScroll);
-      document.removeEventListener("mousewheel", noScroll);
-    }, animationTime * 1000);
+    /**
+     * NOTE:
+     * Make it run only if it is running on the client side
+     * I think the implementation using next/dynamic is better.
+     * However, that would force the use of B, so I did it this way.
+     */
+    if (typeof document !== "undefined") {
+      document.addEventListener("touchmove", noScroll, { passive: false });
+      document.addEventListener("mousewheel", noScroll, { passive: false });
+      setTimeout(() => {
+        document.removeEventListener("touchmove", noScroll);
+        document.removeEventListener("mousewheel", noScroll);
+      }, animationTime * 1000);
+    }
   }, [windowRef.current, imageRef.current, anotherRef.current]);
 
   return (
@@ -44,12 +52,7 @@ export const LoadingAnimationComponent: React.FC = () => {
       <div className={styles.animation_block} ref={windowRef}>
         <div className={styles.animation_block_inner}>
           <div className={styles.animation_icon_block}>
-            <img
-              className={styles.animation_icon}
-              ref={imageRef}
-              src="triangle.png"
-              alt="アンジュのアイコン"
-            ></img>
+            <img ref={imageRef} src="triangle.png" alt="sample image"></img>
           </div>
           <div className={styles.animation_title_block} ref={anotherRef}>
             <h1 className={styles.animation_title}>
