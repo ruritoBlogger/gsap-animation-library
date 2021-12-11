@@ -1,0 +1,41 @@
+{
+  "name": "gsap-animation-library-sample",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:ruritoBlogger/gsap-animation-library-sample.git",
+  "author": "rurito0125 <rurito.blog@gmail.com>",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build && next export",
+    "start": "next start",
+    "type-check": "tsc --pretty --noEmit",
+    "format": "prettier --write .",
+    "lint": "eslint src --ext ts --ext tsx"
+  },
+  "dependencies": {
+    "@types/node": "^16.11.10",
+    "gsap": "^3.7.1",
+    "next": "^12.0.4",
+    "next-sitemap": "^1.6.99",
+    "react": "17.0.1",
+    "react-dom": "17.0.1",
+    "sass": "^1.43.5"
+  },
+  "devDependencies": {
+    "@types/react": "^16.9.56",
+    "@types/react-dom": "^16.9.9",
+    "@types/react-router-dom": "^5.1.6",
+    "@typescript-eslint/eslint-plugin": "^5.4.0",
+    "@typescript-eslint/parser": "^5.4.0",
+    "eslint": "^8.3.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.25.3",
+    "eslint-plugin-react": "^7.27.1",
+    "eslint-plugin-simple-import-sort": "^7.0.0",
+    "prettier": "^2.5.0",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.0.5"
+  }
+}
